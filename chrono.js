@@ -4652,14 +4652,14 @@ var util  = require('../../utils/EN');
 
 var PATTERN = new RegExp('(\\W|^)' +
     '(within|in)\\s*' +
-    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?(?:\\s*few)?|half(?:\\s*an?)?)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?(?:\\s*few)?|half(?:\\s*an?)?|around(?:\\s*an)?)\\s*' +
     '(seconds?|min(?:ute)?s?|hours?|days?|weeks?|months?|years?)\\s*' +
     '(?=\\W|$)', 'i'
 );
 
 var STRICT_PATTERN = new RegExp('(\\W|^)' +
     '(within|in)\\s*' +
-    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?|around(?:\\s*an)?)\\s*' +
     '(seconds?|minutes?|hours?|days?)\\s*' +
     '(?=\\W|$)', 'i'
 );
@@ -5223,7 +5223,7 @@ var util  = require('../../utils/EN');
 
 var PATTERN = new RegExp('(\\W|^)' +
     '(this|next|last|past)\\s*' +
-    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|few|half(?:\\s*an?)?)?\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|few|half(?:\\s*an?)?|around(?:\\s*an)?)?\\s*' +
     '(seconds?|min(?:ute)?s?|hours?|days?|weeks?|months?|years?)(?=\\s*)' +
     '(?=\\W|$)', 'i'
 );
@@ -5682,7 +5682,7 @@ var ParsedResult = require('../../result').ParsedResult;
 var ParsedComponents = require('../../result').ParsedComponents;
 
 var FIRST_REG_PATTERN  = new RegExp("(^|\\s|T)" +
-    "(?:(?:at|from)\\s*)??" + 
+    "(?:(?:at|from|around)\\s*)??" + 
     "(\\d{1,4}|noon|midnight)" + 
     "(?:" + 
         "(?:\\.|\\:|\\：)(\\d{1,2})" + 
@@ -6053,6 +6053,8 @@ exports.updateParsedComponent = function updateParsedComponent(result, ref, offs
     } else if(modifier == 'this') {
         startMoment.day(offset);
     } else {
+        startMoment.day(offset);
+        /*
         if (Math.abs(offset - 7 - refOffset) < Math.abs(offset - refOffset)) {
             startMoment.day(offset - 7);
         } else if (Math.abs(offset + 7 - refOffset) < Math.abs(offset - refOffset)) {
@@ -6060,6 +6062,7 @@ exports.updateParsedComponent = function updateParsedComponent(result, ref, offs
         } else {
             startMoment.day(offset);
         }
+        */
     }
 
     result.start.assign('weekday', offset);
