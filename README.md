@@ -1,9 +1,8 @@
-Chrono
+Chrono (Aiko flavor)
 ======
-A natural language date parser in Javascript, designed for extracting date information from any given text. (Java version is also available [here](https://github.com/wanasit/chrono-java))
+Chrono: A natural language date parser in Javascript, designed for extracting date information from any given text. (Java version is also available [here](https://github.com/wanasit/chrono-java))
 
-[![Build Status](https://travis-ci.org/wanasit/chrono.svg?branch=master)](https://travis-ci.org/wanasit/chrono)
-[![Coverage Status](https://img.shields.io/coveralls/wanasit/chrono.svg)](https://coveralls.io/r/wanasit/chrono?branch=master)
+Aiko Chrono: A flavor of Chrono suited to internal use.
 
 Chrono supports most date and time formats, such as :
 
@@ -15,34 +14,24 @@ Chrono supports most date and time formats, such as :
 * Sat Aug 17 2013 18:40:39 GMT+0900 (JST)
 * 2014-11-30T08:15:30-05:30
 
+Aiko Chrono adds support for some other colloquialisms:
+
+* around 9pm
+* friday 
+    - this is the same as "this friday"
+
 ## Install
 
 #### npm (recommended)
 
 Just run:
 
-    $ npm i --save chrono-node
+    $ npm i --save Aiko/chrono
     
 And start using chrono:
 
     var chrono = require('chrono-node')
     chrono.parseDate('An appointment on Sep 12-13') 
-
-#### Bower
-
-Prefer bower? You can do that, too:
-
-Just run:
-
-    $ bower install chrono
-  
-And use:
-   
-```html
-    <script src="bower_components/chrono/chrono.min.js"></script>
-    <script>chrono.parseDate('An appointment on Sep 12-13')</script>
-```
-    
 
 #### Other Options:
 
