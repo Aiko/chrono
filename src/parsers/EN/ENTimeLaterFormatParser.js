@@ -6,12 +6,12 @@ var util  = require('../../utils/EN');
 var PATTERN = new RegExp('' +
     '(\\W|^)' +
     '(' + util.TIME_UNIT_PATTERN + ')' +
-    '(?:later|after|from now|henceforth|forward|out)(?=(?:\\W|$))', 'i');
+    '(?:later|after|from now|henceforth|forward|out|around)(?=(?:\\W|$))', 'i');
 
 var STRICT_PATTERN = new RegExp('' +
     '(\\W|^)' +
     '(' + util.TIME_UNIT_STRICT_PATTERN + ')' +
-    '(?:later|from now)(?=(?:\\W|$))', 'i');
+    '(?:later|from now|around)(?=(?:\\W|$))', 'i');
 
 exports.Parser = function ENTimeLaterFormatParser(){
     Parser.apply(this, arguments);

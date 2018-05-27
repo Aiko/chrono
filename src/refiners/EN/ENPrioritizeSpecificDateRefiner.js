@@ -5,7 +5,7 @@ var ParsedComponents = require('../../result').ParsedComponents;
 var Refiner = require('../refiner').Refiner;
 
 
-var PATTERN = new RegExp("^\\s*(at|after|before|on|,|-|\\(|\\))?\\s*$");
+var PATTERN = new RegExp("^\\s*(at|around|after|before|on|,|-|\\(|\\))?\\s*$");
 
 function isMoreSpecific(prevResult, currResult) {
     var moreSpecific = false;

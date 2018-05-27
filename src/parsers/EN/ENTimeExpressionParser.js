@@ -8,7 +8,7 @@ var ParsedResult = require('../../result').ParsedResult;
 var ParsedComponents = require('../../result').ParsedComponents;
 
 var FIRST_REG_PATTERN  = new RegExp("(^|\\s|T)" +
-    "(?:(?:at|from)\\s*)??" + 
+    "(?:(?:at|from|around)\\s*)??" + 
     "(\\d{1,4}|noon|midnight)" + 
     "(?:" + 
         "(?:\\.|\\:|\\：)(\\d{1,2})" + 
@@ -16,7 +16,7 @@ var FIRST_REG_PATTERN  = new RegExp("(^|\\s|T)" +
             "(?:\\:|\\：)(\\d{2})(?:\\.(\\d{1,6}))?" + 
         ")?" + 
     ")?" + 
-    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?|O\\W*CLOCK))?" + 
+    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|am?|pm?|PM?|O\\W*CLOCK))?" + 
     "(?=\\W|$)", 'i');
 
 

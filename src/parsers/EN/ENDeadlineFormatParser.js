@@ -10,14 +10,14 @@ var util  = require('../../utils/EN');
 
 var PATTERN = new RegExp('(\\W|^)' +
     '(within|in)\\s*' +
-    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?(?:\\s*few)?|half(?:\\s*an?)?)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?(?:\\s*few)?|half(?:\\s*an?)?|around(?:\\s*an)?)\\s*' +
     '(seconds?|min(?:ute)?s?|hours?|days?|weeks?|months?|years?)\\s*' +
     '(?=\\W|$)', 'i'
 );
 
 var STRICT_PATTERN = new RegExp('(\\W|^)' +
     '(within|in)\\s*' +
-    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?|around(?:\\s*an)?)\\s*' +
     '(seconds?|minutes?|hours?|days?)\\s*' +
     '(?=\\W|$)', 'i'
 );
