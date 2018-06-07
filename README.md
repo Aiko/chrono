@@ -19,6 +19,11 @@ Aiko Chrono adds support for some other colloquialisms:
 * around 9pm
 * friday 
     - this is the same as "this friday"
+* this/next week[end]
+
+Features in progress:
+* the week of [indicator]
+* by the end of the [indicator]
 
 ## Install
 
