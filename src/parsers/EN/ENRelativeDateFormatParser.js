@@ -69,6 +69,7 @@ exports.Parser = function ENRelativeDateFormatParser(){
                     result.start.imply('month', date.month() + 1);
                     result.start.imply('year', date.year());
                     date.add(6, 'd');
+                    result.end = result.start.clone();
                     result.end.imply('day', date.date());
                     result.end.imply('month', date.month() + 1);
                     result.end.imply('year', date.year());
@@ -86,6 +87,7 @@ exports.Parser = function ENRelativeDateFormatParser(){
                     result.start.imply('month', date.month() + 1);
                     result.start.imply('year', date.year());
                     date.add(1, 'd');
+                    result.end = result.start.clone();
                     result.end.imply('day', date.date());
                     result.end.imply('month', date.month() + 1);
                     result.end.imply('year', date.year());
@@ -118,7 +120,6 @@ exports.Parser = function ENRelativeDateFormatParser(){
         }
         
         if (match[RELATIVE_WORD_GROUP].match(/day|week|month|year/i)) {
-
             if (match[RELATIVE_WORD_GROUP].match(/day/i)) {
                 date.add(num, 'd');
                 result.start.assign('year', date.year());
@@ -132,6 +133,7 @@ exports.Parser = function ENRelativeDateFormatParser(){
                 result.start.imply('month', date.month() + 1);
                 result.start.imply('year', date.year());
                 date.add(6, 'd');
+                result.end = result.start.clone();
                 result.end.imply('day', date.date());
                 result.end.imply('month', date.month() + 1);
                 result.end.imply('year', date.year());
@@ -147,6 +149,7 @@ exports.Parser = function ENRelativeDateFormatParser(){
                 result.start.imply('month', date.month() + 1);
                 result.start.imply('year', date.year());
                 date.add(1, 'd');
+                result.end = result.start.clone();
                 result.end.imply('day', date.date());
                 result.end.imply('month', date.month() + 1);
                 result.end.imply('year', date.year());
