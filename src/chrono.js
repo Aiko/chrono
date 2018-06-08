@@ -23,7 +23,7 @@ var Chrono = function(option) {
     rangeParser.extract = (t, r, m, o) => {
         if (m[0] == 'this week') {
             let start_date = new Date(r.getTime())
-            start_date.setHours(-24*ref.getDay())
+            start_date.setHours(-24*r.getDay())
             start_date.setHours(7)
             start_date.setMinutes(0)
             let end_date = new Date(r.getTime())
@@ -81,7 +81,7 @@ var Chrono = function(option) {
         }
         if (m[0] == 'next week') {
             let start_date = new Date(r.getTime())
-            start_date.setHours(-24*ref.getDay())
+            start_date.setHours(-24*r.getDay())
             start_date.setHours(7)
             start_date.setMinutes(0)
             start_date.setHours(24*7)
