@@ -68,8 +68,33 @@ exports.Parser = function ENRelativeDateFormatParser(){
                     result.start.imply('day', date.date());
                     result.start.imply('month', date.month() + 1);
                     result.start.imply('year', date.year());
-                } 
+                    date.add(6, 'd');
+                    result.end.imply('day', date.date());
+                    result.end.imply('month', date.month() + 1);
+                    result.end.imply('year', date.year());
+                    result.end.imply('hour', 11);
+                    result.end.imply('minute', 59);
+                    result.end.imply('meridiem', 1);
+                }
+
+
+                // This weekend
+                if (match[RELATIVE_WORD_GROUP].match(/weekend/i)) {
+                    date.add(-date.get('d'), 'd');
+                    date.add(6, 'd');
+                    result.start.imply('day', date.date());
+                    result.start.imply('month', date.month() + 1);
+                    result.start.imply('year', date.year());
+                    date.add(1, 'd');
+                    result.end.imply('day', date.date());
+                    result.end.imply('month', date.month() + 1);
+                    result.end.imply('year', date.year());
+                    result.end.imply('hour', 11);
+                    result.end.imply('minute', 59);
+                    result.end.imply('meridiem', 1);
+                }
                 
+
                 // This month
                 else if (match[RELATIVE_WORD_GROUP].match(/month/i)) {
                     date.add(-date.date() + 1, 'd');
@@ -106,6 +131,28 @@ exports.Parser = function ENRelativeDateFormatParser(){
                 result.start.imply('day', date.date());
                 result.start.imply('month', date.month() + 1);
                 result.start.imply('year', date.year());
+                date.add(6, 'd');
+                result.end.imply('day', date.date());
+                result.end.imply('month', date.month() + 1);
+                result.end.imply('year', date.year());
+                result.end.imply('hour', 11);
+                result.end.imply('minute', 59);
+                result.end.imply('meridiem', 1);
+            } else if (match[RELATIVE_WORD_GROUP].match(/weekend/i)) {
+                date.add(num * 7, 'd');
+                // We don't know the exact date for next/last week so we imply
+                // them
+                date.add(6, 'd');
+                result.start.imply('day', date.date());
+                result.start.imply('month', date.month() + 1);
+                result.start.imply('year', date.year());
+                date.add(1, 'd');
+                result.end.imply('day', date.date());
+                result.end.imply('month', date.month() + 1);
+                result.end.imply('year', date.year());
+                result.end.imply('hour', 11);
+                result.end.imply('minute', 59);
+                result.end.imply('meridiem', 1);
             } else if (match[RELATIVE_WORD_GROUP].match(/month/i)) {
                 date.add(num, 'month');
                 // We don't know the exact day for next/last month
