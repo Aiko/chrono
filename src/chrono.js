@@ -1,4 +1,4 @@
-console.log("Using Aiko flavor");
+console.warn("[W] Using Aiko flavor of chrono-node");
 var options = exports.options = require('./options');
 
 exports.parser = require('./parsers/parser');
@@ -53,7 +53,7 @@ var Chrono = function(option) {
         if (m[0] == 'this weekend') {
             let end_date = new Date(r.getTime())
             end_date.setHours(24*(6-end_date.getDay()))
-            end_date.setHours(11)
+            end_date.setHours(24+11)
             end_date.setMinutes(59)
             let start_date = new Date(end_date.getTime())
             start_date.setHours(0)
@@ -113,7 +113,7 @@ var Chrono = function(option) {
         if (m[0] == 'next weekend') {
             let end_date = new Date(r.getTime())
             end_date.setHours(24*(6-end_date.getDay()))
-            end_date.setHours(11)
+            end_date.setHours(24+11)
             end_date.setMinutes(59)
             end_date.setHours(24*7)
             let start_date = new Date(end_date.getTime())
@@ -150,7 +150,7 @@ Chrono.prototype.parse = function(text, refDate, opt) {
     refDate = refDate || new Date();
     opt = opt || {};
     opt.forwardDate = opt.forwardDate || opt.forwardDate;
-    
+
     var allResults = [];
 
     this.parsers.forEach(function (parser) {
