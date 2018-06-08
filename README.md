@@ -33,9 +33,9 @@ Just run:
 
     $ npm i --save Aiko/chrono
     
-And start using chrono:
+And start using Aiko chrono:
 
-    var chrono = require('chrono-node')
+    var chrono = require('aiko-chrono-node')
     chrono.parseDate('An appointment on Sep 12-13') 
 
 #### Other Options:
