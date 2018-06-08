@@ -1,13 +1,13 @@
 {
-  "name": "chrono-node",
-  "description": "A natural language date parser in Javascript",
-  "homepage": "http://github.com/berryboy/chrono",
+  "name": "aiko-chrono-node",
+  "description": "A flavor of chrono-node with some more features.",
+  "homepage": "http://github.com/Aiko/chrono",
   "repository": {
     "type": "git",
-    "url": "https://github.com/berryboy/chrono.git"
+    "url": "https://github.com/Aiko/chrono.git"
   },
   "license": "MIT",
-  "version": "1.3.8",
+  "version": "1.4.1",
   "directories": {
     "source": "./src",
     "test": "./test"
