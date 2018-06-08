@@ -7,7 +7,7 @@
     "url": "https://github.com/Aiko/chrono.git"
   },
   "license": "MIT",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "directories": {
     "source": "./src",
     "test": "./test"
