@@ -35,11 +35,8 @@ exports.updateParsedComponent = function updateParsedComponent(result, ref, offs
     } else if(modifier == 'next') {
         startMoment.day(offset + 7);
         startMomentFixed = true;
-    } else if(modifier == 'this') {
-        startMoment.day(offset);
     } else {
-        startMoment.day(offset);
-        /*
+        // hamdles this 
         if (Math.abs(offset - 7 - refOffset) < Math.abs(offset - refOffset)) {
             startMoment.day(offset - 7);
         } else if (Math.abs(offset + 7 - refOffset) < Math.abs(offset - refOffset)) {
@@ -47,7 +44,6 @@ exports.updateParsedComponent = function updateParsedComponent(result, ref, offs
         } else {
             startMoment.day(offset);
         }
-        */
     }
 
     result.start.assign('weekday', offset);
